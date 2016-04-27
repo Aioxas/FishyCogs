@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import os
 from .utils.dataIO import fileIO
+from .utils import checks
 
 default_settings = {"SERVER": {"DEFAULT": False}}
 
@@ -13,22 +14,24 @@ class ayy:
         self.settings = fileIO("data/ayy/settings.json", "load")
 
     @commands.command(pass_context=True, no_pm=True)
+    @checks.is_admin_or_permissions(manage_server=True)
     async def ayy(self, ctx):
         """Toggle lmaoing for this server"""
         server = ctx.message.server
-        if server.id not in self.settings["SERVER"]:
-            self.settings["SERVER"][
-                server.id] = default_settings["SERVER"]["DEFAULT"]
-        self.settings["SERVER"][
-            server.id] = not self.settings["SERVER"][server.id]
-        if self.settings["SERVER"][server.id]:
-            await self.bot.say("I will now lmao to ayy.")
+        if server.id not in self.settings:
+            self.settings[server.id] = True
         else:
-            await self.bot.say("I won't lmao anymore.")
-        fileIO("data/ayy/settings.json", "save", self.settings)
+            self.settings[server.id] = not self.settings[server.id]
+        if self.settings[server.id]:
+            await self.bot.say('lmaoing enabled'
+                               ' for {}'.format(server.name))
+        else:
+            await self.bot.say('lmaoing disabled'
+                               ' for {}'.format(server.name))
+        self.save_settings()
 
     async def check_ayy(self, message):
-        enabled = self.settings.get(message.channel.id, False)
+        enabled = self.settings.get(message.server.id, False)
         if "ayy" in message.content.split():
             if enabled:
                 await self.bot.send_message(message.channel, "lmao")
