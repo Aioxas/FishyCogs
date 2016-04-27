@@ -28,10 +28,9 @@ class ayy:
         fileIO("data/ayy/settings.json", "save", self.settings)
 
     async def check_ayy(self, message):
+        enabled = self.settings.get(message.channel.id, False)
         if "ayy" in message.content.split():
-            if self.settings["SERVER"].get(server.id, False):
-                await self.bot.say("Looks like lmaoing isn't enabled! Do `!ayy`v")
-            else:
+            if enabled:
                 await self.bot.send_message(message.channel, "lmao")
 
 def check_folders():
