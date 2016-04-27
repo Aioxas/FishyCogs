@@ -32,9 +32,9 @@ class ayy:
             await self.bot.send_message(message.channel, "lmao")
 
 def check_folders():
-if not os.path.exists("data/ayy"):
-    print("Creating ayy folder...")
-    os.makedirs("data/ayy")
+    if not os.path.exists("data/ayy"):
+        print("Creating ayy folder...")
+        os.makedirs("data/ayy")
 
 
 def check_files(bot):
