@@ -29,7 +29,10 @@ class ayy:
 
     async def check_ayy(self, message):
         if "ayy" in message.content.split():
-            await self.bot.send_message(message.channel, "lmao")
+            if self.settings["SERVER"].get(server.id, False):
+                await self.bot.say("Looks like lmaoing isn't enabled! Do `!ayy`v")
+            else:
+                await self.bot.send_message(message.channel, "lmao")
 
 def check_folders():
     if not os.path.exists("data/ayy"):
