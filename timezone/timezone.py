@@ -1,8 +1,5 @@
 import discord
 from discord.ext import commands
-from pytz import country_timezones
-from pytz import all_timezones
-from pytz import timezone
 import pytz
 from datetime import datetime
 from .utils.dataIO import fileIO
