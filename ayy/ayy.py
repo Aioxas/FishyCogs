@@ -14,7 +14,7 @@ class ayy:
         self.settings = fileIO("data/ayy/settings.json", "load")
 
     @commands.command(pass_context=True, no_pm=True)
-    @checks.is_admin_or_permissions(manage_server=True)
+    @checks.admin_or_permissions(manage_server=True)
     async def ayy(self, ctx):
         """Toggle lmaoing for this server"""
         server = ctx.message.server
