@@ -45,7 +45,7 @@ def check_files(bot):
         fileIO(settings_path, "save", default_settings)
 
 def setup(bot):
-	check_folders()
+    check_folders()
     check_files(bot)
     n = ayy(bot)
     bot.add_listener(n.check_ayy, "on_message")
