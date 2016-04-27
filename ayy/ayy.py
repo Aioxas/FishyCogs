@@ -13,7 +13,7 @@ class ayy:
         self.settings = fileIO("data/ayy/settings.json", "load")
 
     @commands.command(pass_context=True, no_pm=True)
-    async def lolz(self, ctx):
+    async def ayy(self, ctx):
         """Toggle lmaoing for this server"""
         server = ctx.message.server
         if server.id not in self.settings["SERVER"]:
