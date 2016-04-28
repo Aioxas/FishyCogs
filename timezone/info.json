@@ -2,5 +2,5 @@
     "AUTHOR" : "fishyfing",
     "DESCRIPTION" : "Checks the time in pretty much every country in the world. Do 'pip3 install pytz' to use!",
     "DISABLED" : false,
-    "NAME" : "timezone"
+    "NAME" : "Checks the time in pretty much every country in the world. Do 'pip3 install pytz' to use!"
 }
