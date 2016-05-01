@@ -25,16 +25,20 @@ class ayy:
         if self.settings[server.id]:
             await self.bot.say('lmaoing enabled'
                                ' for {}'.format(server.name))
+            fileIO("data/ayy/settings.json", "save", self.settings)
         else:
             await self.bot.say('lmaoing disabled'
                                ' for {}'.format(server.name))
-        self.save_settings()
+            fileIO("data/ayy/settings.json", "save", self.settings)
 
     async def check_ayy(self, message):
         enabled = self.settings.get(message.server.id, False)
         if "ayy" in message.content.split():
             if enabled:
                 await self.bot.send_message(message.channel, "lmao")
+        elif "shrug" in message.content.split():
+            if enabled:
+                await self.bot.send_message(message.channel, "¯\_(ツ)_/¯")
 
 def check_folders():
     if not os.path.exists("data/ayy"):
@@ -43,11 +47,12 @@ def check_folders():
 
 
 def check_files(bot):
+    settings = {"ENABLED" : False}
     settings_path = "data/ayy/settings.json"
 
     if not os.path.isfile(settings_path):
         print("Creating default ayy settings.json...")
-        fileIO(settings_path, "save", default_settings)
+        fileIO(settings_path, "save", settings)
 
 def setup(bot):
     check_folders()
