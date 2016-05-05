@@ -111,12 +111,13 @@ class Timezone:
             else:
                 exist = False
             if exist == True:
-                await self.bot.say("Supported timezones for ***" + code + ":***")
+                msg = "Supported timezones for ***" + code + ":***\n"
                 tz = str(country_timezones(code))
                 tz = tz[:-1]
                 tz = tz[1:]
-                await self.bot.say(tz)
-                await self.bot.say("**Use** `!time Continent/City` **to display the current time in " + code + ".***")
+                msg += tz
+                msg +="\n**Use** `!time Continent/City` **to display the current time in " + code + ".**"
+                await self.bot.say(msg)
             else:
                 await self.bot.say("That code isn't supported. For a full list, see here: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones>")
 
