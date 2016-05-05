@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 import pytz
+from pytz import all_timezones
+from pytz import country_timezones
 from datetime import datetime
 from .utils.dataIO import fileIO
 from .utils import checks
@@ -99,7 +101,7 @@ class Timezone:
     async def iso(self, ctx, *, code):
         """Looks up ISO3166 country codes and gives you a supported timezone."""
         #code = str(ctx.message.content[len(ctx.prefix+ctx.command.name)+1:])
-        print(code)
+        #print(code)
         #code = code[4:]
         if code == "":
             await self.bot.say("That doesn't look like a country code!")
