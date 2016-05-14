@@ -39,6 +39,16 @@ class ayy:
         elif "shrug" in message.content.split():
             if enabled:
                 await self.bot.send_message(message.channel, "¯\_(ツ)_/¯")
+        elif "¯\_(ツ)_/¯" in message.content.split():
+            if enabled:
+                if message.author.id != "158124575706578944":
+                     await self.bot.send_message(message.channel, "Fuck you. That's *my* job.")
+        elif "k" in message.content.split():
+            if enabled:
+                await self.bot.send_message(message.channel, ":ok:")
+        elif "kkk" in message.content.split():
+            if enabled:
+                await self.bot.send_message(message.channel, "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/KKK.svg/500px-KKK.svg.png")
 
 def check_folders():
     if not os.path.exists("data/ayy"):
