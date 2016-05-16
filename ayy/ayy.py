@@ -41,7 +41,7 @@ class ayy:
                 await self.bot.send_message(message.channel, "¯\_(ツ)_/¯")
         elif "¯\_(ツ)_/¯" in message.content.split():
             if enabled:
-                if message.author.id != "158124575706578944":
+                if message.author.id != self.bot.user.id:
                      await self.bot.send_message(message.channel, "Fuck you. That's *my* job.")
         elif "k" in message.content.split():
             if enabled:
