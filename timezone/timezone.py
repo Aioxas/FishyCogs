@@ -33,7 +33,6 @@ class Timezone:
             msg += "Added `!time set <user>`. Available to the Modrole and above, to correct those pesky trolls, or to help people out!"
             msg += "For more help, see <http://fishyfing.xyz/timezone>"
             await self.bot.say(msg)
-            await self.bot.send_cmd_help(ctx)
 
     @time.group(pass_context=True, no_pm=True)
     async def tz(self, ctx, *, tz):
