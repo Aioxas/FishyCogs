@@ -30,7 +30,7 @@ class Timezone:
             msg += "*Version: 1.2*\n"
             msg += "*Updated: 19th May, 2016*\n"
             msg += "**What's new?**\n"
-            msg += "Added `!time set <user>`. Available to the Admins, to correct those pesky trolls, or to help people out!"
+            msg += "Added `!time set <user>`. Available to the Admins, to correct those pesky trolls, or to help people out!\n"
             msg += "For more help, see <http://fishyfing.xyz/timezone>"
             await self.bot.say(msg)
 
