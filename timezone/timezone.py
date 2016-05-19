@@ -74,7 +74,7 @@ class Timezone:
 
     @time.command(pass_context=True, no_pm=True)
     @checks.admin_or_permissions(manage_server=True)
-    async def set(self, ctx, *, tz, user: discord.Member=None):
+    async def set(self, ctx, user: discord.Member, *, tz):
         """Allows the mods to edit timezones"""
         author = ctx.message.author
         if user is None:
@@ -84,14 +84,16 @@ class Timezone:
             await self.bot.say('That timezone is invalid.')
             return
         else:
-            if tz in all_timezones:
+            space = " "
+            timezone = tz.split(space, 1)[0]
+            if timezone in all_timezones:
                 if "'" in tz:
-                    tz = tz.replace("'", "")
-                self.usertime[user.id] = tz
+                    timezone = timezone.replace("'", "")
+                self.usertime[user.id] = timezone
                 fileIO("data/timezone/users.json", "save", self.usertime)
-                await self.bot.say('Successfully set {}\'s timezone.').format(user.name)
+                await self.bot.say('Successfully set {}\'s timezone.'.format(user.name))
             else:
-                await self.bot.say("**Error:** Unrecognised timezone. Try `!time me Continent/City`")
+                await self.bot.say("**Error:** Unrecognised timezone. Try `!time set @user Continent/City`")
 
 
     @time.command(pass_context=True, no_pm=True)
