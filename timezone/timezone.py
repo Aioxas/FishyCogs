@@ -30,7 +30,7 @@ class Timezone:
             msg += "*Version: 1.2*\n"
             msg += "*Updated: 19th May, 2016*\n"
             msg += "**What's new?**\n"
-            msg += "Added `!time set <user>`. Available to the Modrole and above, to correct those pesky trolls, or to help people out!"
+            msg += "Added `!time set <user>`. Available to the Admins, to correct those pesky trolls, or to help people out!"
             msg += "For more help, see <http://fishyfing.xyz/timezone>"
             await self.bot.say(msg)
 
@@ -73,7 +73,7 @@ class Timezone:
                 await self.bot.say("That user hasn't set their timezone.")
 
     @time.command(pass_context=True, no_pm=True)
-    @checks.mod_or_permissions(manage_server=True):
+    @checks.admin_or_permissions(manage_server=True):
     async def set(self, ctx, user: discord.Member=None, tz):
         """Allows the mods to edit timezones"""
         author = ctx.message.author
