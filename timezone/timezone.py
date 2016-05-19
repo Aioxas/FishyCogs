@@ -26,7 +26,7 @@ class Timezone:
 
     For the list of supported timezones, see here: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"""
         if ctx.invoked_subcommand is None:
-            msg = "__Timezone__"
+            msg = "**__Timezone__**\n"
             msg += "*Version: 1.2*\n"
             msg += "*Updated: 19th May, 2016*\n"
             msg += "**What's new?**\n"
@@ -73,8 +73,8 @@ class Timezone:
                 await self.bot.say("That user hasn't set their timezone.")
 
     @time.command(pass_context=True, no_pm=True)
-    @checks.admin_or_permissions(manage_server=True):
-    async def set(self, ctx, user: discord.Member=None, tz):
+    @checks.admin_or_permissions(manage_server=True)
+    async def set(self, ctx, *, tz, user: discord.Member=None):
         """Allows the mods to edit timezones"""
         author = ctx.message.author
         if user is None:
