@@ -31,7 +31,7 @@ class Timezone:
             msg += "*Updated: 19th May, 2016*\n"
             msg += "**What's new?**\n"
             msg += "Added `!time set <user>`. Available to the Admins, to correct those pesky trolls, or to help people out!\n"
-            msg += "For more help, see <http://fishyfing.xyz/timezone.html>"
+            msg += "For more help, see <https://fishyfing.xyz/timezone.html>"
             await self.bot.say(msg)
 
     @time.group(pass_context=True, no_pm=True)
