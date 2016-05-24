@@ -49,7 +49,7 @@ class ayy:
             elif "kkk" in message.content.split():
                 if enabled:
                     await self.bot.send_message(message.channel, "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/KKK.svg/500px-KKK.svg.png")
-            elif "xd" or "XD" in message.content.split():
+            elif "XD" in message.content.split():
                 if enabled:
                     await self.bot.send_message(message.channel, "http://i.imgur.com/WXRT4Hl.jpg")
 
