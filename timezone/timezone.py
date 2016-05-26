@@ -97,7 +97,7 @@ class Timezone:
 
 
     @time.command(pass_context=True, no_pm=True)
-    async def me(self, ctx, *, *tz):
+    async def me(self, ctx, *tz):
         """Sets your timezone. For various things. 
         Usage: !time me Continent/City"""
         user = ctx.message.author
