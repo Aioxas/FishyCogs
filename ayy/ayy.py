@@ -6,7 +6,7 @@ from .utils import checks
 
 default_settings = {"SERVER": {"DEFAULT": False}}
 
-class ayy:
+class Ayy:
     """lmaoing"""
 
     def __init__(self, bot):

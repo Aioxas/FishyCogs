@@ -1,6 +1,7 @@
 {
     "AUTHOR" : "fishyfing",
-    "DESCRIPTION" : "Checks the time in pretty much every country in the world. Do 'pip3 install pytz' to use!",
-    "DISABLED" : false,
-    "NAME" : "Checks the time in pretty much every country in the world."
+    "INSTALL_MSG" : "Thanks for installing **timezone**!\nThis module requires you to install PYTZ (`pip3 install pytz`) in order to work correctly.\nFor more info, see https://fishyfing.xyz/timezone.html",
+    "NAME" : "Timezone",
+    "SHORT" : "Gets times across the world...",
+    "DESCRIPTION" : "Various time checking features."
 }

@@ -97,10 +97,12 @@ class Timezone:
 
 
     @time.command(pass_context=True, no_pm=True)
-    async def me(self, ctx, *tz):
+    async def me(self, ctx):
         """Sets your timezone. For various things. 
         Usage: !time me Continent/City"""
         user = ctx.message.author
+        tz = str(ctx.message.content[len(ctx.prefix+ctx.command.name)+1:]) 
+        tz = tz[3:] 
         if tz in all_timezones:
             exist = True
         else:
@@ -109,12 +111,11 @@ class Timezone:
             if user.id not in self.usertime:
                 await self.bot.say("You haven't set your timezone. Do `!time me Continent/City`")
             else:
-                msg = "Your current timezone is ***"+str(self.check_time(user.id))+".***"
-                await self.bot.say(msg)
+                msg = "Your current timezone is ***"+str(self.check_time(user.id))+".***\n"
                 time = datetime.now(pytz.timezone(str(self.check_time(user.id))))
                 fmt = '**%H:%M** %d-%B-%Y ***%Z (UTC%z)***'
                 time = time.strftime(fmt)
-                msg = "The current time is: " + time
+                msg += "The current time is: " + time
                 await self.bot.say(msg)
         elif exist == True:
             if "'" in tz:

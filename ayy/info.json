@@ -1,6 +1,7 @@
 {
     "AUTHOR" : "fishyfing",
-    "DESCRIPTION" : "auto-lmaoing",
-    "DISABLED" : false,
-    "NAME" : "auto-lmaoing. !ayy to toggle"
+    "INSTALL_MSG" : "Thanks for installing **ayy**!\nThis is a memeful cog. Don't expect anything serious!\n__***Please disable this cog in the Red support server.***__",
+    "NAME" : "Ayy",
+    "SHORT" : "Lmao",
+    "DESCRIPTION" : "Full of dank memes!"
 }
