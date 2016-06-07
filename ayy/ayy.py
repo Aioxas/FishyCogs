@@ -70,6 +70,6 @@ def check_files(bot):
 def setup(bot):
     check_folders()
     check_files(bot)
-    n = ayy(bot)
+    n = Ayy(bot)
     bot.add_listener(n.check_ayy, "on_message")
     bot.add_cog(n)
