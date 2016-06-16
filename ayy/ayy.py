@@ -33,7 +33,7 @@ class Ayy:
 
     async def check_ayy(self, message):
         enabled = self.settings.get(message.server.id, False)
-        if message.server.id == '133049272517001216':
+        if message.server.id == '133049272517001216': #red's server
             return
         else:
             if message.author.id != self.bot.user.id:
