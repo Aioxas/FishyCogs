@@ -1,0 +1,8 @@
+{
+    "AUTHOR" : "fishyfing",
+    "DESCRIPTION" : "Gets the network speeds from Speedtest.net",
+    "DISABLED" : false,
+    "INSTALL_MSG" : "Woo! Speedtests!\n***Requires speedtest-cli!*** `pip3 install speedtest-cli`",
+    "NAME" : "Speedtest",
+    "SHORT" : "Checks the current snetwork speeds"
+}
