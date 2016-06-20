@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import subprocess
-import sys
+import asyncio
 
 class Speedtest:
 
@@ -11,9 +11,9 @@ class Speedtest:
     @commands.command(pass_context=True)
     async def speedtest(self):
         """SPEEEEEEEEED"""  
-        await self.bot.say("SPEED TESTING...") 
+        await self.bot.say("SPEED TESTING...")
+        await self.bot.say("This may take a while...") 
         x = subprocess.check_output("speedtest-cli --secure --simple", shell=True).decode()
-        #.split("\r\n")[9]
         await self.bot.say(x)
 
 def setup(bot):
