@@ -97,12 +97,13 @@ class Timezone:
 
 
     @time.command(pass_context=True, no_pm=True)
-    async def me(self, ctx):
+    async def me(self, ctx, *tz): 
         """Sets your timezone. For various things. 
         Usage: !time me Continent/City"""
-        user = ctx.message.author
-        tz = str(ctx.message.content[len(ctx.prefix+ctx.command.name)+1:]) 
-        tz = tz[3:] 
+        user = ctx.message.author 
+        # tz = str(ctx.message.content[len(ctx.prefix+ctx.command.name)+1:])  
+        # tz = tz[3:]  
+        tz = " ".join(tz)
         if tz in all_timezones:
             exist = True
         else:
@@ -122,7 +123,7 @@ class Timezone:
                 tz = tz.replace("'", "")
             self.usertime[user.id] = tz
             fileIO("data/timezone/users.json", "save", self.usertime)
-            await self.bot.say('Successfully set your timezone.')
+            await self.bot.say('Successfully set your timezone to **{}**.'.format(tz))
         else:
             await self.bot.say("**Error:** Unrecognised timezone. Try `!time me Continent/City`")
 
