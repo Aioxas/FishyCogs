@@ -26,13 +26,7 @@ class Timezone:
 
     For the list of supported timezones, see here: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"""
         if ctx.invoked_subcommand is None:
-            msg = "**__Timezone__**\n"
-            msg += "*Version: 1.2*\n"
-            msg += "*Updated: 19th May, 2016*\n"
-            msg += "**What's new?**\n"
-            msg += "Added `!time set <user>`. Available to the Admins, to correct those pesky trolls, or to help people out!\n"
-            msg += "For more help, see <https://fishyfing.xyz/timezone.html>"
-            await self.bot.say(msg)
+            await send_cmd_help()
 
     @time.group(pass_context=True, no_pm=True)
     async def tz(self, ctx, *, tz):
@@ -150,6 +144,17 @@ class Timezone:
                 await self.bot.say(msg)
             else:
                 await self.bot.say("That code isn't supported. For a full list, see here: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones>")
+
+    @time.command(pass_context=True, no_pm=True)
+    async def version(self):
+            msg = "**__Timezone__**\n"
+            msg += "*fishyfing*"
+            msg += "*Version: 1.2.5*\n"
+            msg += "*Updated: 26th June, 2016*\n"
+            msg += "**What's new?**\n"
+            msg += "Moved this text to `!time version`. Now you can see help!\n"
+            msg += "For more help, see <https://fishyfing.xyz/timezone.html>"
+            await self.bot.say(msg)
 
     def account_check(self, id):
         if id in self.usertime:
