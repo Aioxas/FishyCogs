@@ -147,14 +147,14 @@ class Timezone:
 
     @time.command(pass_context=True, no_pm=True)
     async def version(self):
-            msg = "**__Timezone__**\n"
-            msg += "*fishyfing*"
-            msg += "*Version: 1.2.5*\n"
-            msg += "*Updated: 26th June, 2016*\n"
-            msg += "**What's new?**\n"
-            msg += "Moved this text to `!time version`. Now you can see help!\n"
-            msg += "For more help, see <https://fishyfing.xyz/timezone.html>"
-            await self.bot.say(msg)
+        msg = "**__Timezone__**\n"
+        msg += "*fishyfing*"
+        msg += "*Version: 1.2.5*\n"
+        msg += "*Updated: 26th June, 2016*\n"
+        msg += "**What's new?**\n"
+        msg += "Moved this text to `!time version`. Now you can see help!\n"
+        msg += "For more help, see <https://fishyfing.xyz/timezone.html>"
+        await self.bot.say(msg)
 
     def account_check(self, id):
         if id in self.usertime:
