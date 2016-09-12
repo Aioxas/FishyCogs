@@ -9,6 +9,7 @@ class Speedtest:
         self.bot = bot
 
     @commands.command(pass_context=True)
+    @commands.cooldown(1, 3600)
     async def speedtest(self):
         """SPEEEEEEEEED"""  
         await self.bot.say("SPEED TESTING...")
