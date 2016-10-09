@@ -26,7 +26,7 @@ class Timezone:
 
     For the list of supported timezones, see here: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"""
         if ctx.invoked_subcommand is None:
-            await send_cmd_help()
+            await send_cmd_help(ctx)
 
     @time.group(pass_context=True, no_pm=True)
     async def tz(self, ctx, *, tz):
